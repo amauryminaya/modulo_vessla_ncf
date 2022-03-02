@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="ncf_view_tree" model="ir.ui.view">
+        <field name="name">vessla_ncf.view.tree</field>
+        <field name="model">vessla.ncf</field>
+        <field name="arch" type="xml">
+            <tree string="Listado Tipo NCF">
+                <field name="tipo"/>
+                <field name="descripcion"/>
+                <field name ="serie"/>
+                 <field name ="secuencial"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="ncf_view_lista_tree" model="ir.ui.view">
+        <field name="name">vessla_ncf.view.lista.tree</field>
+        <field name="model">vessla.ncf.lista</field>
+        <field name="arch" type="xml">
+            <tree string="Listado NCF">
+                <field name="ncf_tipo_id"/>
+                <field name="desde"/>
+                <field name="hasta"/>
+                <field name ="proximo"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_view_ncf_tipos" model="ir.actions.act_window">
+        <field name="name">Tipos de NCF</field>
+        <field name="res_model">vessla.ncf</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <record id="action_view_ncf_lista" model="ir.actions.act_window">
+        <field name="name">Lista de NCF</field>
+        <field name="res_model">vessla.ncf.lista</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <menuitem id="menu_ncf_tipos" parent="" action="action_view_ncf_tipos"/>
+    <menuitem id="menu_ncf_lista" parent="" action="action_view_ncf_lista"/>
+
+</odoo>

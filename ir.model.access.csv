@@ -1,0 +1,4 @@
+id,name,model_id/id,group_id/id,perm_read,perm_write,perm_create,perm_unlink
+access_ncf_model,vessla.ncf,model_vessla_ncf,base.group_user,1,1,1,1
+access_ncf_lista_model,vessla.ncf.lista,model_vessla_ncf_lista,base.group_user,1,1,1,1
+
