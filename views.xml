@@ -38,8 +38,30 @@
         <field name="view_mode">tree,form</field>
     </record>
 
+    <menuitem
+        id="vessla_ncf_menu"
+        name="Vessla NCF Menu"
+        sequence="10"/>
+    
+    <menuitem
+        id="vessla_ncf_menu_sub"
+        name="Vessla NCF"
+        parent="vessla_ncf_menu"
+        sequence="11"/>
 
-    <menuitem id="menu_ncf_tipos" parent="" action="action_view_ncf_tipos"/>
-    <menuitem id="menu_ncf_lista" parent="" action="action_view_ncf_lista"/>
+        <!--Inherit the sale order form view--> 
+<record id="view_sale_order_custom" model="ir.ui.view"> 
+<field name="name">sale.order.custom.form.inherited</field>
+     <field name="model">sale.order</field> 
+     <field name="inherit_id" ref="sale.view_order_form"/> 
+     <field name="arch" type="xml"> 
+          <xpath expr="//field[@name='partner_id']" position="after"> 
+               <field name="custom_field"/>
+          </xpath> 
+     </field> 
+</record>
+ 
+    <menuitem id="menu_ncf_tipos" parent="vessla_ncf_menu_sub" action="action_view_ncf_tipos"/>
+    <menuitem id="menu_ncf_lista" parent="vessla_ncf_menu_sub" action="action_view_ncf_lista"/>
 
 </odoo>

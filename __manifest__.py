@@ -5,9 +5,13 @@
     "description" : "AddOns para el control de NCF Version 1.0.0",
     "version" : "1.0.0",
     "author" : "Amaury Minaya",
-    "category" : "Vessla",
+    "category" : "Contabilidad",
     "data": [
         'views.xml',
         'ir.model.access.csv'
+    ],
+    "depends" : [
+        'base','sale'
     ]
+
 }
