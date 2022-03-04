@@ -11,7 +11,7 @@
         'ir.model.access.csv'
     ],
     "depends" : [
-        'base','sale'
+        'base','sale','account'
     ]
 
 }

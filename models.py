@@ -24,8 +24,10 @@ class NcfListado(models.Model):
     fecha_vigencia = fields.Date(string="Valido hasta", required=True)
 
 class SaleOrderInherited(models.Model):
-    _inherit = 'sale.order' 
+    _inherit = 'account.move' 
     custom_field = fields.Char(string='Custom Field')
+    factura = fields.Many2one("vessla.ncf", string="Tipo NCF", required=True, copy=False)
+    
 
 
 
